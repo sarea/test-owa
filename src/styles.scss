@@ -1,0 +1,76 @@
+@import './material-theme';
+
+$owa-dialog-actions-height: 9%;
+
+// reuse this set of styles and DRY!
+%dialog-heading-text {
+  h1 {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0;
+    padding: 8px 0;
+  }
+  p {
+    color: grey;
+    font-size: 14px;
+    font-weight: 200;
+    margin: 0;
+    padding: 0 0 8px 0;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 13px;
+  color: grey;
+  height: 100%;
+
+  body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden; // needed for dialogs...
+  }
+}
+
+// app-wide custom styles
+
+.owa-dialog-heading {
+
+  @extend %dialog-heading-text;
+
+  div.left {
+    display: flex;
+    flex: 2 1 auto;
+    flex-direction: column;
+    @extend %dialog-heading-text;
+  }
+
+  div.right {
+    margin-left: 8px;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
+}
+
+.owa-dialog-actions {
+  background-color: white;
+  border-top: 1px solid grey;
+  width: calc(100% - 2px);
+  height: $owa-dialog-actions-height;
+  min-height: 50px;
+  position: absolute; // this is what cause owa-735
+  bottom: 1px;
+  // margin-bottom: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  > * {
+    flex: 0 1 auto;
+  }
+}
+
+

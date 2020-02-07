@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Outlook for Web Addin</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- this is in the <head> to make sure it is loaded before our own code -->
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js"></script>
+  <!-- this is for debugging outlook mac -->
+  <!-- <script src="https://localhost:1337/vorlon.js"></script> -->
+  <script>
+    // create global reference, function will be assigned later
+    var onItemSend;
+  </script>
+</head>
+<body>
+<owa-app-root>
+=  <h1>loading</h1>
+</owa-app-root>
+</body>
+</html>

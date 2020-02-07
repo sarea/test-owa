@@ -1,0 +1,61 @@
+:host {
+  width: 100%;
+  overflow: hidden;
+
+  .checking-container {
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+
+    .checking-content {
+
+      .image-container {
+        z-index: 400;
+        display: none;
+        flex: 1 1 100px;
+        align-items: center;
+
+        @media screen and (min-height: 300px) {
+          display: flex;
+        }
+
+        .image-animation {
+          object-fit: contain;
+          width: 90%;
+          height: 90%;
+          margin-left: auto;
+          margin-right: auto;
+
+          // IE 10/11 check (taken from webapp, IE10/11 quirkfix)
+          // workaround for missing object-fit support
+          @media all and (-ms-high-contrast:none)
+          {
+            width: 70%;
+            height: 70%;
+            background-size: cover;
+          }
+        }
+      }
+    }
+
+    .checking-footer {
+
+      > button {
+        margin-top: 16px;
+        width: 130px;
+        height: 35px;
+        text-transform: uppercase;
+        float: right;
+        border: none;
+        cursor: pointer;
+        color: blue;
+        background-color: blue;
+      }
+    }
+  }
+
+}
